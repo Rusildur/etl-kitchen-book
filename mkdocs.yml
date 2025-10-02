@@ -1,6 +1,6 @@
 site_name: ETL Kitchen — Notes
-site_url: https://<GITHUB_USER>.github.io/<REPO>
-repo_url: https://github.com/<GITHUB_USER>/<REPO>
+site_url: https://Rusildur.github.io/etl-kitchen-book
+repo_url: https://github.com/Rusildur/etl-kitchen-book
 edit_uri: edit/main/docs/
 use_directory_urls: true
 
