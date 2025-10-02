@@ -1,0 +1,51 @@
+site_name: ETL Kitchen — Notes
+site_url: https://<GITHUB_USER>.github.io/<REPO>
+repo_url: https://github.com/<GITHUB_USER>/<REPO>
+edit_uri: edit/main/docs/
+use_directory_urls: true
+
+theme:
+  name: material
+  language: ru
+  features:
+    - navigation.tabs           # верхние вкладки — берутся из 1-го уровня nav
+    - navigation.tabs.sticky    # вкладки “прилипают” к верху
+    #- navigation.sections       # секции в левом сайдбаре
+    - navigation.indexes        # кликабельные index.md у разделов
+    - content.code.copy
+    #- toc.follow
+    - navigation.expand
+
+plugins:
+  - search
+  - roamlinks
+  - glightbox
+  # ПЛАГИН АВТО-НАВИГАЦИИ (см. раздел 3 — выбери один вариант)
+  #- awesome-nav              # новый плагин (рекомендуется, 2025+)
+
+
+nav:
+  - Главная: index.md
+  - Инженерия данных:
+      - Обзор: data/index.md
+      - Airflow:
+          - Обзор: data/Airflow/index.md
+          - Старт за 15 минут: data/Airflow/Старт за 15 минут.md
+      - Docker:
+          - data/Docker/how_to_load.md
+          - data/Docker/start_docker.md
+          - data/Docker/new_post.md
+      - Database:
+          - data/Database/first_t.md
+          - Potsgesql:
+            - data/Database/Postgresql/frr.md
+  - Кулинария:
+      - Обзор: cooking/index.md
+      - Dessert:
+          - Обзор: cooking/dessert/index.md
+          - Наполеон: cooking/dessert/Наполеон.md
+      - Духовка: cooking/Духовка/index.md
+
+
+
+
