@@ -43,8 +43,8 @@ nav:
       - Обзор: cooking/index.md
       - Dessert:
           - Обзор: cooking/dessert/index.md
-          - Наполеон: cooking/dessert/Наполеон.md
-      - Духовка: cooking/Духовка/index.md
+          - Наполеон: cooking/dessert/napoleon.md
+      - Духовка: cooking/oven/index.md
 
 
 
