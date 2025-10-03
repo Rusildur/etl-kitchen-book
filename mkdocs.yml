@@ -41,7 +41,7 @@ nav:
             - data/Database/Postgresql/frr.md
   - Кулинария:
       - Обзор: cooking/index.md
-      - Dessert:
+      - Десерты:
           - Обзор: cooking/dessert/index.md
           - Наполеон: cooking/dessert/napoleon.md
       - Духовка: cooking/oven/index.md
