@@ -65,6 +65,7 @@ markdown_extensions:
       anchor_linenums: true     # якоря на строках (типа #L12)
       line_spans: __span        # обёртка строк — нужна для подсветки конкретных строк
       pygments_lang_class: true # CSS-класс языка для темы подсветки
+      auto_title: true  
   - pymdownx.inlinehilite       # подсветка ИНЛАЙН-кода с указанием языка
   - pymdownx.superfences        # корректные ```блоки``` внутри списков/вкладок
 

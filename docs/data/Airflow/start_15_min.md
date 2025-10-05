@@ -12,21 +12,21 @@
 ## Быстрый запуск 
 
 1. Скачиваем официальный docker-compose.yaml:
-```shell 
+```sh 
 mkdir airflow-local && cd airflow-local
 curl -LfO 'https://airflow.apache.org/docs/apache-airflow/3.0.6/docker-compose.yaml'
 ```
 2. Готовим папки и .env 
-```shell
+```sh
 mkdir -p ./dags ./logs ./plugins ./config
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
 3.  Инициализируем 
-```shell
+```sh
 docker compose up airflow-init
 ```
 4. Стартуем 🚀
-    ```shell
+    ```sh
     docker compose up -d
     ```
 5. Откроем UI airflow (по умолчанию по [адресу](http://localhost:8080)):  
