@@ -5,6 +5,7 @@
 Разберём быстрый запуск Airflow для домашнего проекта. Использовать будем гайд [с официального сайта](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
 
 Нужно заранее:
+
 🟢WSL или Linux/macOS
 
 🟢Docker Desktop

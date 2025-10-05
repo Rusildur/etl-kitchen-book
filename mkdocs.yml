@@ -81,7 +81,7 @@ nav:
       - Обзор: data/index.md
       - Airflow:
           - Обзор: data/Airflow/index.md
-          - Старт за 15 минут: data/Airflow/Старт за 15 минут.md
+          - Старт за 15 минут: data/Airflow/start_15_min.md
       - Docker:
           - data/Docker/how_to_load.md
           - data/Docker/start_docker.md
