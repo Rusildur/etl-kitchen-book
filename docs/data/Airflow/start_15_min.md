@@ -47,7 +47,7 @@ docker compose up airflow-init
             task_id="say_hi",
             bash_command="echo 'ETL Kitchen: it works!'"
         )
-     ```
+    ```
 
 😏 Готово! Мы быстро подняли Airflow и проверили работу на простом DAG’е.
 
