@@ -1,43 +1,77 @@
 site_name: ETL Kitchen — Notes
 site_url: https://etl-kitchen-book.ru
+edit_uri: ""                # скрыли "Редактировать страницу"
 use_directory_urls: true
 
 theme:
   name: material
   language: ru
+  logo: assets/logo.svg     # положим позже (можно пустую заглушку)
+  favicon: assets/favicon.png
+  font:
+    text: Inter             # читабельный текст
+    code: JetBrains Mono    # шрифт для кода
   features:
-    - navigation.tabs           # верхние вкладки — берутся из 1-го уровня nav
-    - navigation.tabs.sticky    # вкладки “прилипают” к верху
-    #- navigation.sections       # секции в левом сайдбаре
-    - navigation.indexes        # кликабельные index.md у разделов
-    - content.code.copy
-    #- toc.follow
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
     - navigation.expand
-
+    - header.autohide
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
   palette:
+    # Авто (следовать системе)
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/brightness-auto
-        name: "Как в системе"
-
+        name: Как в системе
+    # Светлая
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: orange
+      accent: indigo
       toggle:
         icon: material/brightness-7
-        name: "Тёмная тема"
-
+        name: Тёмная тема
+    # Тёмная
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: orange
+      accent: indigo
       toggle:
         icon: material/brightness-4
-        name: "Светлая тема"
+        name: Светлая тема
 
 plugins:
   - search
   - roamlinks
   - glightbox
-  # ПЛАГИН АВТО-НАВИГАЦИИ (см. раздел 3 — выбери один вариант)
-  #- awesome-nav              # новый плагин (рекомендуется, 2025+)
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra:
+  social:
+    - icon: simple/telegram
+      link: https://t.me/etl_kitchen
+      name: Telegram
+
+extra_css:
+  - styles/extra.css         # добавим ниже
 
 
 nav:
@@ -61,6 +95,7 @@ nav:
           - Обзор: cooking/dessert/index.md
           - Наполеон: cooking/dessert/napoleon.md
       - Духовка: cooking/oven/index.md
+  - Контакты: about/contact.md
 
 
 
