@@ -20,19 +20,18 @@
 }
 
 
-/* ===== МЯГЧЕ ОРАНЖЕВЫЙ (для шапки и акцентных элементов) ===== */
-/* светлая схема */
-[data-md-color-scheme="default"] {
-  /* мягкий янтарный вместо ярко-оранжевого */
-  --md-primary-fg-color: #f59e0b;        /* amber-500 */
-  --md-primary-fg-color--light: #fbbf24; /* amber-400 */
-  --md-primary-fg-color--dark: #d97706;  /* amber-600 */
+/* === PALETTE D: Sage + Charcoal === */
+[data-md-color-scheme="default"]{
+  --md-primary-fg-color:         #16A34A; /* sage/green */
+  --md-primary-fg-color--light:  #22C55E;
+  --md-primary-fg-color--dark:   #15803D;
+  --md-accent-fg-color:          #475569; /* charcoal (для ссылок/акцента) */
 }
-/* тёмная схема — чуть теплее заголовок */
-[data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #f59e0b;
-  --md-primary-fg-color--light: #fbbf24;
-  --md-primary-fg-color--dark: #d97706;
+[data-md-color-scheme="slate"]{
+  --md-primary-fg-color:         #15803D;
+  --md-primary-fg-color--light:  #22C55E;
+  --md-primary-fg-color--dark:   #14532D;
+  --md-accent-fg-color:          #94A3B8;
 }
 
 /* ===== ВЕРХНИЕ РАЗДЕЛЫ (вкладки) — темнее/жирнее ===== */

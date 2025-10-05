@@ -31,7 +31,7 @@ theme:
     # Светлая
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: amber
+      primary: green
       accent: indigo
       toggle:
         icon: material/brightness-7
@@ -39,7 +39,7 @@ theme:
     # Тёмная
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: amber
+      primary: green
       accent: indigo
       toggle:
         icon: material/brightness-4
