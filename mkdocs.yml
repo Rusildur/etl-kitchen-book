@@ -108,5 +108,6 @@ nav:
   - Контакты: about/contact.md
 
 
-
+extra_javascript:
+  - javascripts/header-title-link.js
 

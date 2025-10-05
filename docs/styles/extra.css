@@ -60,6 +60,6 @@
 
 /* (опционально) название сайта в шапке — чуть массивнее на светлой теме */
 [data-md-color-scheme="default"] .md-header__title .md-ellipsis {
-  color: #111;
+  color: #fff;
   font-weight: 800;
 }
