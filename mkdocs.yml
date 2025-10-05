@@ -15,7 +15,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
-    - navigation.expand
+    #- navigation.expand
     - header.autohide
     - search.highlight
     - search.suggest
