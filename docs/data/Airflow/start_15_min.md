@@ -31,24 +31,24 @@ docker compose up airflow-init
     ```
 5. Откроем UI airflow (по умолчанию по [адресу](http://localhost:8080)):  
 6. Добавим пробный даг 
-```
-import pendulum
-from airflow import DAG
-from airflow.operators.bash import BashOperator
+    ``` python
+    import pendulum
+    from airflow import DAG
+    from airflow.operators.bash import BashOperator
 
-with DAG(
-    dag_id="hello_etl_kitchen",
-    start_date=pendulum.datetime(2025, 9, 11, tz="UTC"),
-    schedule=None,              
-    catchup=False,
-    tags=["etl-kitchen"],
-) as dag:
-    BashOperator(
-        task_id="say_hi",
-        bash_command="echo 'ETL Kitchen: it works!'"
-    )
+    with DAG(
+        dag_id="hello_etl_kitchen",
+        start_date=pendulum.datetime(2025, 9, 11, tz="UTC"),
+        schedule=None,              
+        catchup=False,
+        tags=["etl-kitchen"],
+    ) as dag:
+        BashOperator(
+            task_id="say_hi",
+            bash_command="echo 'ETL Kitchen: it works!'"
+        )
+     ```
 
-```
 😏 Готово! Мы быстро подняли Airflow и проверили работу на простом DAG’е.
 
 💾 Это один из самых быстрых и простых способов поднятия Airflow, сохраняй чтобы не потерять. 
