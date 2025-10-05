@@ -51,20 +51,29 @@ plugins:
   - glightbox
 
 markdown_extensions:
-  - admonition
-  - attr_list
-  - md_in_html
-  - tables
-  - footnotes
-  - admonition
+  # Базовые полезности
+  - admonition                  # блоки-примочки: !!! tip / note / warning
+  - tables                      # таблицы в стиле GitHub
+  - footnotes                   # сноски [^1]
+  - attr_list                   # классы и атрибуты у элементов { .md-button }
+  - md_in_html                  # markdown внутри HTML (для сеток/карточек)
   - toc:
-      permalink: true
+      permalink: true           # якорь “¶” у заголовков
+
+  # Подсветка кода — мощно
+  - pymdownx.highlight:
+      anchor_linenums: true     # якоря на строках (типа #L12)
+      line_spans: __span        # обёртка строк — нужна для подсветки конкретных строк
+      pygments_lang_class: true # CSS-класс языка для темы подсветки
+  - pymdownx.inlinehilite       # подсветка ИНЛАЙН-кода с указанием языка
+  - pymdownx.superfences        # корректные ```блоки``` внутри списков/вкладок
+
+  # Вкладки и эмодзи (как было)
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
 extra:
   social:
     - icon: simple/telegram
