@@ -1,4 +1,4 @@
-site_name: ETL Kitchen — Notes
+site_name: ETL Kitchen Book
 site_url: https://etl-kitchen-book.ru
 edit_uri: ""                # скрыли "Редактировать страницу"
 use_directory_urls: true
@@ -21,6 +21,7 @@ theme:
     - search.suggest
     - content.code.copy
     - content.tabs.link
+    - header.social  
   palette:
     # Авто (следовать системе)
     - media: "(prefers-color-scheme)"
@@ -30,7 +31,7 @@ theme:
     # Светлая
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: orange
+      primary: amber
       accent: indigo
       toggle:
         icon: material/brightness-7
@@ -38,7 +39,7 @@ theme:
     # Тёмная
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: orange
+      primary: amber
       accent: indigo
       toggle:
         icon: material/brightness-4

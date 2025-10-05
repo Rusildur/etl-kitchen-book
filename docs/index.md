@@ -1,9 +1,9 @@
-здесь главная страница# ETL Kitchen — Notes
+# ETL Kitchen Book
 
 Про данные вкусно! 
 
-[Старт по проекту](data/index.md){ .md-button .md-button--primary }
-[Канал в Telegram](https://t.me/etl_kitchen){ .md-button }
+
+[Канал в Telegram](https://t.me/etl_kitchen){ .md-button .md-button--primary }
 
 ---
 
@@ -11,25 +11,25 @@
 
 - :material-database: **Инженерия данных**
   ---
-  Airflow, dbt, Greenplum, Docker. Гайды, best-practice и чек-листы.
-  [:octicons-arrow-right-24: В раздел](data/index.md)
+  Airflow, dbt, Greenplum, Docker. Гайды, best-practice и чек-листы
+  [:octicons-arrow-right-24: Инженерия данных](data/index.md)
 
 - :material-silverware-fork-knife: **Кулинария**
   ---
-  Пошаговые рецепты с КБЖУ и оборудованием.
-  [:octicons-arrow-right-24: В раздел](cooking/index.md)
+  Пошаговые рецепты и ингредиенты
+  [:octicons-arrow-right-24: Кулинария ](cooking/index.md)
 
 - :material-telegram: **ETL Kitchen — Telegram**
   ---
-  Посты, разборы и обновления.
+  Посты, разборы и обновления
   [:octicons-arrow-right-24: Подписаться](https://t.me/etl_kitchen)
 
 - :material-account-circle-outline: **Контакты**
   ---
-  Кто я, сотрудничество, обратная связь.
-  [:octicons-arrow-right-24: Связаться](about/contact.md)
+  Кто я, сотрудничество, обратная связь
+  [:octicons-arrow-right-24: Контакты](about/contact.md)
 
 </div>
 
 !!! tip "TL;DR"
-    Если впервые здесь — начни с «**Обзора**» по каждому разделу. В конце страниц — **Checklist** и **FAQ**.
+    Если впервые здесь — начни с «**Обзора**» по каждому разделу.
