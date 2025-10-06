@@ -1,5 +1,5 @@
 # Старт за 15 минут
-[Пост в ТГ ](https://t.me/etl_kitchen/53)
+[  Пост в ТГ :simple-telegram: ](https://t.me/etl_kitchen/53)
 
 
 Разберём быстрый запуск Airflow для домашнего проекта. Использовать будем гайд [с официального сайта](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)

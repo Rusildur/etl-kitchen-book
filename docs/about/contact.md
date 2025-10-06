@@ -1,4 +1,11 @@
-# Контакты
+---
+hide:
+  - navigation   # скрыть левый сайдбар
+  - toc          # опционально: скрыть правый TOC
+---
+
+
+
 
 - Telegram канал: [@etl_kitchen](https://t.me/etl_kitchen)
 - Telegram ЛС: [@Mustafin_Ruslan_F](https://t.me/Mustafin_Ruslan_F)

@@ -88,17 +88,15 @@ extra_css:
 nav:
   - Главная: index.md
   - Инженерия данных:
-      - Обзор: data/index.md
-      - Airflow:
+      - Содержимое раздела: data/index.md
+      - Airflow: 
+          - Содержимое раздела: data/Airflow/index.md
           - Старт за 15 минут: data/Airflow/start_15_min.md
       - Docker:
-          - data/Docker/how_to_load.md
-          - data/Docker/start_docker.md
-          - data/Docker/new_post.md
+          - Содержимое раздела: data/Docker/index.md
       - Database:
-          - data/Database/first_t.md
-          - Potsgesql:
-            - data/Database/Postgresql/frr.md
+        - Содержимое раздела: data/Database/index.md
+        - PostgreSQL & Greenplum: data/Database/Postgresql_Greenplum/index.md
   - Кулинария:
       - Обзор: cooking/index.md
       - Десерты:
