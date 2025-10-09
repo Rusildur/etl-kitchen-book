@@ -68,6 +68,7 @@ markdown_extensions:
       auto_title: true  
   - pymdownx.inlinehilite       # подсветка ИНЛАЙН-кода с указанием языка
   - pymdownx.superfences        # корректные ```блоки``` внутри списков/вкладок
+  - pymdownx.details # сворачиваемый блок
 
   # Вкладки и эмодзи (как было)
   - pymdownx.tabbed:
@@ -96,7 +97,9 @@ nav:
           - Содержимое раздела: data/Docker/index.md
       - Database:
         - Содержимое раздела: data/Database/index.md
-        - PostgreSQL & Greenplum: data/Database/Postgresql_Greenplum/index.md
+        - PostgreSQL & Greenplum: 
+          - data/Database/Postgresql_Greenplum/index.md
+          - Как читать план запроса: data/Database/Postgresql_Greenplum/query_plan.md
   - Кулинария:
       - Обзор: cooking/index.md
       - Десерты:
