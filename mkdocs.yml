@@ -99,6 +99,9 @@ nav:
           - Portainer: data/docker/portainer.md
       - Database:
         - Содержимое раздела: data/database/index.md
+        - PostgreSQL & Greenplum: 
+          - data/database/postgresql_greenplum/index.md
+          - Как читать план запроса: data/database/postgresql_greenplum/query_plan.md
       - Проекты:
         - Содержимое раздела: data/projects/index.md
         - Базовый минимум: data/projects/basic_minimum.md
