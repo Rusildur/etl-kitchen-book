@@ -33,7 +33,7 @@ jobs:
           pip install mkdocs mkdocs-material
 
       - name: Build MkDocs
-        run: mkdocs build --clean 
+        run: mkdocs build --clean --strict
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
