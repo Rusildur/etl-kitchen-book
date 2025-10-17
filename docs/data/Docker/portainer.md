@@ -66,9 +66,79 @@ docker compose up -d
 | Events     | Журнал событий Docker демона. Показывает все действия: создание, запуск, остановка контейнеров, загрузка образов и другие операции.                                                                               | ![[Pasted image 20251016180058.png]] |
 | Host       | Информация о хост-системе, на которой запущен Docker: CPU, память, диски, сетевые интерфейсы. Позволяет мониторить ресурсы сервера.                                                                               | ![[Pasted image 20251016180137.png]] |
 
+## Запускаем первый контейнер и настраиваем сеть
+Поднимем PostgreSQL и настроим 
+### Настройка сети 
+1. Открываем Networks
+2. Нажимаем справа  + Add network 
+3. указываем 
+   имя - etl_net 
+   Driver - bridge
+   Остальное не меняем, так как локальный проект. 
+4. Нажимаем Create the network
 
-Теперь приступим к запуску своих проектов! 
-[Как запустить свой первый проект в Portainer ](/data/projects/basic_minimum)
+???  "Пример создания сети"
+	![[Pasted image 20251017091220.png]]
+### Добавляем первый Stack
+1. Открываем вкладку Stack
+2. Нажимаем справа + Add stack
+3. Указываем имя нашего стека - postgresql_test
+4.  В Web editor указываем compose нашего PostgreSQL (см. ниже пример)
+5. В Environment variables указываем значения для наших переменных ${} (см. ниже)
+   Можно нажать Advanced mode и вставить переменные одним файлом
+???  "Пример первого Stack"
+	![[Pasted image 20251017092644.png]]
+
+!!! tip "Обрати внимание, что мы указываем нашу сеть в compose"
+
+```{ .text .copy title="compose PostgreSQL для Web editor" }
+services:
+  postgres:
+    image: postgres:${PG_VERSION}
+    container_name: postgres
+    restart: unless-stopped
+    ports:
+      - "${PG_HOST_PORT}:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - etl_net
+
+volumes:
+  pg_data:
+
+networks:
+  etl_net:
+    external: true
+    name: etl_net
+```
+
+
+```{ .text .copy title="Environment variables" }
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres_password_here
+POSTGRES_DB=app_db
+PG_HOST_PORT=5432
+PG_VERSION=16-alpine
+```
+
+### Проверяем подключение в Dbeaver 
+???  "Картинка из бобра"
+	![[Pasted image 20251017092117.png]]
+
+
+## Что дальше? 
+Как запустить первый проект с PostgreSQL, Jupyter, vscode и Dagster смотри тут ➡️ 
+[Проект Базовый минимум ](/data/projects/basic_minimum)
 
 ## Полезные материалы 
-- https://habr.com/ru/articles/924528/ 
+- [Один Portainer, чтоб править всеми. Habr ]( https://habr.com/ru/articles/924528/ )
