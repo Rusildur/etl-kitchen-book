@@ -101,6 +101,9 @@ nav:
         - PostgreSQL & Greenplum: 
           - data/Database/Postgresql_Greenplum/index.md
           - Как читать план запроса: data/Database/Postgresql_Greenplum/query_plan.md
+      - Проекты:
+        - Содержимое раздела: data/projects/index.md
+        - Базовый минимум: data/projects/basic_minimum.md
   - Кулинария:
       - Обзор: cooking/index.md
       - Десерты:
