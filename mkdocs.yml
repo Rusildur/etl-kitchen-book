@@ -91,20 +91,15 @@ nav:
   - Инженерия данных:
       - Содержимое раздела: data/index.md
       - Airflow: 
-          - Содержимое раздела: data/airflow/index.md
-          - Старт за 15 минут: data/airflow/start_15_min.md
+          - Содержимое раздела: data/Airflow/index.md
+          - Старт за 15 минут: data/Airflow/start_15_min.md
       - Docker:
-          - Содержимое раздела: data/docker/index.md
-          - Установка: data/docker/install.md
-          - Portainer: data/docker/portainer.md
+          - Содержимое раздела: data/Docker/index.md
       - Database:
-        - Содержимое раздела: data/database/index.md
+        - Содержимое раздела: data/Database/index.md
         - PostgreSQL & Greenplum: 
-          - data/database/postgresql_greenplum/index.md
-          - Как читать план запроса: data/database/postgresql_greenplum/query_plan.md
-      - Проекты:
-        - Содержимое раздела: data/projects/index.md
-        - Базовый минимум: data/projects/basic_minimum.md
+          - data/Database/Postgresql_Greenplum/index.md
+          - Как читать план запроса: data/Database/Postgresql_Greenplum/query_plan.md
   - Кулинария:
       - Обзор: cooking/index.md
       - Десерты:
