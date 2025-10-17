@@ -95,6 +95,7 @@ nav:
           - Старт за 15 минут: data/Airflow/start_15_min.md
       - Docker:
           - Содержимое раздела: data/Docker/index.md
+          - Установка: data/Docker/install.md
           - Portainer: data/Docker/portainer.md
       - Database:
         - Содержимое раздела: data/Database/index.md
