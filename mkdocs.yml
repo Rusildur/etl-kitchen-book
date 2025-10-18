@@ -107,6 +107,9 @@ nav:
         - Базовый минимум: data/projects/basic_minimum.md
   - Кулинария:
       - Обзор: cooking/index.md
+      - Завтраки:
+        - Обзор: cooking/breakfast/index.md
+        - Блины с ветчиной и сыром: cooking/breakfast/pancakes_ham_cheese.md
       - Десерты:
           - Обзор: cooking/dessert/index.md
           - Наполеон: cooking/dessert/napoleon.md
