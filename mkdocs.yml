@@ -105,6 +105,9 @@ nav:
       - Проекты:
         - Содержимое раздела: data/projects/index.md
         - Базовый минимум: data/projects/basic_minimum.md
+      - API:
+        - Содержимое раздела: data/api/index.md
+        - DummyJSON: data/api/dummyjson.md
   - Кулинария:
       - Обзор: cooking/index.md
       - Завтраки:
