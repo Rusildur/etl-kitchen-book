@@ -129,7 +129,7 @@ requests.get("https://dummyjson.com/carts").json()
 3. Вставить данные, полученные от API, в соответствующие таблицы. 
 4. Закрыть соединение с базой.
 
-## Подключение к базе данных 
+### Подключение к базе данных 
 Наш PostgreSQL и Jupyter были созданы с доступом в одной сети и контейнеры должны видеть друг друга, поэтому для подключения мы используем сохраненные environment
 
 ```python 
@@ -142,6 +142,35 @@ try:
 except Exception as e:
     print("Ошибка подключения к базе данных:", e)
 ```
+
+!!! tip "Что за DATABASE_URL? "
+	Это переменная, которую мы задаем при поднятие Jupyter контейнера:
+	``` { .text .copy title="environment" }
+	DATABASE_URL = postgresql://postgres:postgres_password_here@postgres:5432/app_db 
+	```
+	[смотри здесь](/data/projects/basic_minimum)
+
+
+Альтернативный способ подключения к БД 
+```python 
+# Альтернативный способ подключения  
+DB_NAME = "app_db"
+DB_USER = "postgres"
+DB_PASS = "postgres_password_here"
+DB_HOST = "postgres" 
+DB_PORT = "5432"
+try:
+    conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT)
+    print("Соединение с базой установлено")
+except Exception as e:
+    print("Ошибка подключения к базе данных:", e)
+```
+
+!!! tip "Нюансы про подключения к БД "
+	Обрати внимание на DB_HOST, у меня Jupyter и PostgreSQL подняты в одной сети на разных контейнерах. Jupyter будет видеть хост PostgreSQL по имени контейнера, поэтому указывается "postgres". 
+	
+	Если ты запускаешь код локально в VSCode и у тебя поднят только контейнер PostgreSQL, то БД будет доступа по адресу DB_HOST = "localhost"
+
 
 Должны получить: Соединение с базой установлено
 
