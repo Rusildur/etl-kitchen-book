@@ -5,6 +5,7 @@ use_directory_urls: true
 
 theme:
   name: material
+  custom_dir: overrides
   language: ru
   logo: assets/logo.svg     # положим позже (можно пустую заглушку)
   favicon: assets/favicon.png
@@ -49,6 +50,7 @@ plugins:
   - search
   - roamlinks
   - glightbox
+  - privacy
 
 markdown_extensions:
   # Базовые полезности
@@ -77,10 +79,22 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 extra:
+  analytics:
+    provider: google
+    property: G-RQZGD6HHDS
+
+  consent:
+    title: "Cookie consent"
+    description: >
+      Мы используем файлы cookie для аналитики.
+      Нажимая «Принять», вы соглашаетесь на сбор обезличенных данных.
+
   social:
     - icon: simple/telegram
       link: https://t.me/etl_kitchen
       name: Telegram
+
+
 
 extra_css:
   - styles/extra.css         # добавим ниже
