@@ -13,7 +13,7 @@
     <td></td>
   </tr>
   <tr>
-    <td>В работе...</td>
+    <td><a href="./breakfast/zucchini_pancakes">Блины из кабачка — КБЖУ, ингредиенты, рецепт</td>
     <td></td>
   </tr>
 
