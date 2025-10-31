@@ -19,8 +19,12 @@
 
   <!-- Десерты (1 строка) -->
   <tr>
-    <td><a href="./dessert">Десерты</a></td>
+    <td rowspan="2"><a href="./dessert">Десерты</a></td>
     <td><a href="./dessert/napoleon">Торт «Наполеон»: классика с заварным кремом</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="./dessert/pumpkin_cookies">Печенье из тыквы</td>
     <td></td>
   </tr>
 </table>

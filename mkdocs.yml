@@ -131,6 +131,7 @@ nav:
       - Десерты:
           - Обзор: cooking/dessert/index.md
           - Наполеон: cooking/dessert/napoleon.md
+          - Печенье из тыквы: cooking/dessert/pumpkin_cookies.md
       - Духовка: cooking/oven/index.md
   - Контакты: about/contact.md
 
