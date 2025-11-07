@@ -107,6 +107,8 @@ nav:
       - Airflow: 
           - Содержимое раздела: data/Airflow/index.md
           - Старт за 15 минут: data/Airflow/start_15_min.md
+          - Легкая версия Airflow 3.0+: data/Airflow/light_version.md
+          - CookBook Airflow in Docker: data/Airflow/cookbook_airflow_run.md
       - Docker:
           - Содержимое раздела: data/Docker/index.md
           - Установка: data/Docker/install.md
