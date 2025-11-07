@@ -291,6 +291,121 @@ docker compose up -d airflow
 	dag = dummyjson_to_postgres_dag()
 	```
 
+???+ "Еще один пример DAG для таблицы users"
+	```python 
+	from __future__ import annotations
+	
+	from datetime import datetime
+	
+	import requests
+	from airflow.decorators import dag, task
+	from airflow.providers.postgres.hooks.postgres import PostgresHook
+	
+	
+	@dag(
+	    dag_id="dummyjson_users_to_postgres",
+	    start_date=datetime(2025, 11, 1),
+	    schedule=None,          # запускаем руками
+	    catchup=False,
+	    tags=["test", "api", "postgres", "users"],
+	)
+	def dummyjson_users_to_postgres_dag():
+	    @task()
+	    def fetch_users(limit: int = 5) -> list[dict]:
+	        """
+	        “¤нем несколько пользователей из DummyJSON.
+	        """
+	        url = f"https://dummyjson.com/users?limit={limit}"
+	        resp = requests.get(url, timeout=10)
+	        resp.raise_for_status()
+	        payload = resp.json()
+	
+	        users = payload.get("users", []) or []
+	        print(f"URL: {url}")
+	        print(f"Status code: {resp.status_code}")
+	        print(f"Received {len(users)} users")
+	
+	        # ќставим только пол¤, которые нам нужны
+	        normalized = []
+	        for u in users:
+	            normalized.append(
+	                {
+	                    "id": u.get("id"),
+	                    "first_name": u.get("firstName"),
+	                    "last_name": u.get("lastName"),
+	                    "email": u.get("email"),
+	                    "age": u.get("age"),
+	                    "city": (u.get("address") or {}).get("city"),
+	                }
+	            )
+	
+	        print("First user (normalized):", normalized[0] if normalized else "no users")
+	
+	        return normalized
+	
+	    @task()
+	    def write_users_to_postgres(users: list[dict]) -> None:
+	        """
+	        ѕишем список пользователей в отдельный Postgres (service: target-postgres, db: demo).
+	        »спользуем коннект target_postgres из AIRFLOW_CONN_TARGET_POSTGRES.
+	        """
+	        if not users:
+	            print("No users to write, skipping")
+	            return
+	
+	        hook = PostgresHook(postgres_conn_id="target_postgres")
+	        conn = hook.get_conn()
+	
+	        create_table_sql = """
+	        CREATE TABLE IF NOT EXISTS users (
+	            id         INTEGER PRIMARY KEY,
+	            first_name TEXT,
+	            last_name  TEXT,
+	            email      TEXT,
+	            age        INTEGER,
+	            city       TEXT,
+	            created_at TIMESTAMP DEFAULT now()
+	        );
+	        """
+	
+	        upsert_sql = """
+	        INSERT INTO users (id, first_name, last_name, email, age, city)
+	        VALUES (%s, %s, %s, %s, %s, %s)
+	        ON CONFLICT (id) DO UPDATE
+	            SET first_name = EXCLUDED.first_name,
+	                last_name  = EXCLUDED.last_name,
+	                email      = EXCLUDED.email,
+	                age        = EXCLUDED.age,
+	                city       = EXCLUDED.city;
+	        """
+	
+	        with conn:
+	            with conn.cursor() as cur:
+	                cur.execute(create_table_sql)
+	
+	                rows = [
+	                    (
+	                        u["id"],
+	                        u["first_name"],
+	                        u["last_name"],
+	                        u["email"],
+	                        u["age"],
+	                        u["city"],
+	                    )
+	                    for u in users
+	                ]
+	
+	                cur.executemany(upsert_sql, rows)
+	
+	        print(f"Inserted/updated {len(users)} users into target Postgres")
+	
+	    write_users_to_postgres(fetch_users())
+	
+	
+	dag = dummyjson_users_to_postgres_dag()
+
+	
+	```
 
 ### requirements, как добавить? 
 
