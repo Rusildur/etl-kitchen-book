@@ -119,6 +119,7 @@ nav:
           - Как читать план запроса: data/Database/Postgresql/query_plan.md
         - Greenplum:
           - Архитектура, таблицы, хранение: data/Database/Greenplum/part_1.md
+          - Полезные запросы: data/Database/Greenplum/useful_queries.md
       - Проекты:
         - Содержимое раздела: data/projects/index.md
         - Базовый минимум: data/projects/basic_minimum.md

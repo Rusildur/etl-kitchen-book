@@ -1,5 +1,4 @@
 
-
 ## Введение в Greenplum
 
 #### Что такое Greenplum
